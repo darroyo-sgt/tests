@@ -1,0 +1,10 @@
+env:
+  dev:
+    site: Des-Corp-AtlasPro
+    power_platform_env: "atlasprodev.crm4.dynamics.com"
+    text: Site Collection - santandernet.sharepoint.com-sites-Des-Corp-AtlasPro
+    serviceAccounts: "SVCO3650098@gsnetcloud.com" 
+    managers: "SVCO365101856@gsnetcloud.com"
+    subsite:
+      - url: committee1
+        name: "Technology Committee"
