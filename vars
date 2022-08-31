@@ -1,10 +1,45 @@
-env:
-  dev:
-    site: Des-Corp-AtlasPro
-    power_platform_env: "atlasprodev.crm4.dynamics.com"
-    text: Site Collection - santandernet.sharepoint.com-sites-Des-Corp-AtlasPro
-    serviceAccounts: "SVCO3650098@gsnetcloud.com" 
-    managers: "SVCO365101856@gsnetcloud.com"
-    subsite:
-      - url: committee1
-        name: "Technology Committee"
+{
+    "env": {
+        "development": {
+            "id": "Des-Corp-AtlasPro",
+            "subsites": [
+                {"id": "committee1"},
+                {"id": "commission1"},
+                {"id": "forum1"}
+            ]
+        },
+        "certification": {
+            "id": "Cert-Corp-AtlasPro",
+            "subsites": [
+                {"id": "committee1"},
+                {"id": "commission1"},
+                {"id": "forum1"}
+            ]
+        },
+        "staging": {
+            "id": "PRE-Corp-AtlasPro",
+            "subsites": [
+                {"id": "committee1"},
+                {"id": "committee2"},
+                {"id": "committee3"},
+                {"id": "committee4"},
+                {"id": "committee5"},
+                {"id": "committee6"},
+                {"id": "committee7"},
+                {"id": "committee8"},
+                {"id": "committee9"},
+                {"id": "executive1"},
+                {"id": "executive2"},
+                {"id": "executive3"},
+                {"id": "executive4"},
+                {"id": "executive5"},
+                {"id": "executive6"},
+                {"id": "executive7"},
+                {"id": "executive8"},
+                {"id": "executive9"},
+                {"id": "executive10"},
+                {"id": "executive11"}
+            ]
+        }
+    }           
+}
