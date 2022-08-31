@@ -14,10 +14,25 @@ on:
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   # This workflow contains a single job called "build"
+  setup:
+    runs-on: ubuntu-lates
+    outputs:
+      types: ${{ steps.setup.outputs.types }}
+    steps:
+      - uses: actions/checkout@v3
+      
+      - name: setup
+        id: setup
+        shell: pwsh
+        run: |
+          $config = Get-Content .\config.json | ConvertFrom-Json
+          $subsitesId = $config.env.development.subsites.id | ConvertTo-Json -Compress
+          echo "::set-output name=types::$subsitesId"
   build:
+    needs: setup
     strategy:
       matrix:
-        type: ["","branding", "data"]
+        type: ${{ fromJSON(needs.setup.outputs.types) }}
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
 
