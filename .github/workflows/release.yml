@@ -15,7 +15,7 @@ on:
 jobs:
   # This workflow contains a single job called "build"
   setup:
-    runs-on: ubuntu-lates
+    runs-on: ubuntu-latest
     outputs:
       types: ${{ steps.setup.outputs.types }}
     steps:
@@ -25,7 +25,7 @@ jobs:
         id: setup
         shell: pwsh
         run: |
-          $config = Get-Content .\config.json | ConvertFrom-Json
+          $config = Get-Content .\vars | ConvertFrom-Json
           $subsitesId = $config.env.development.subsites.id | ConvertTo-Json -Compress
           echo "::set-output name=types::$subsitesId"
   build:
