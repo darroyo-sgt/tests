@@ -35,5 +35,5 @@ jobs:
     - name: Send greeting
       shell: pwsh
       run: |
-        $solutions = ${{ github.event.inputs.solutions }}
-        $solutions.GetType()
+        ${{ github.event.inputs.solutions }} | foreach-object { echo "---$_---"}
+        
