@@ -25,7 +25,7 @@ on:
 jobs:
   # This workflow contains a single job called "greet"
   greet:
-    environment: ${{ github.event.inputs.name }}
+    # environment: ${{ github.event.inputs.name }}
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
 
@@ -33,4 +33,7 @@ jobs:
     steps:
     # Runs a single command using the runners shell
     - name: Send greeting
-      run: echo "Hello ${{ github.event.inputs.name }}"
+      shell: pwsh
+      run: |
+        $solutions = ${{ github.event.inputs.solutions }}
+        $solutions.GetType()
